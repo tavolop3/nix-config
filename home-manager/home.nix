@@ -12,6 +12,7 @@
 
 	#coding stuff
 	gcc
+	jdk
 	eclipses.eclipse-sdk
 
 	#cli utils
@@ -19,12 +20,19 @@
 	btop
 	thefuck
     ];
+
+    sessionVariables = {
+    	TERMINAL = "alacritty";
+    };
   };
 
   imports = [
 	./zsh.nix #este va aca, el resto en modules
 	./git.nix
+	./alacritty.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;
 }
