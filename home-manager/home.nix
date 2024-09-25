@@ -11,6 +11,7 @@
 
 	#coding stuff
 	gcc
+	eclipses.eclipse-sdk
 
 	#cli utils
     	neofetch

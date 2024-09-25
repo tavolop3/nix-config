@@ -9,7 +9,7 @@
       let
         flakeDir = "~/nix-config";
       in {
-      rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
+      rb = "sudo nixos-rebuild switch --flake ${flakeDir}/nixos/.";
       upd = "nix flake update ${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
 
