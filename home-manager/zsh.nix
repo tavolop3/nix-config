@@ -10,7 +10,7 @@
         flakeDir = "~/nix-config";
       in {
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
-      upd = "nix flake update ${flakeDir}";
+      upd = "sudo nix flake update ${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
 
       hms = "home-manager switch --flake ${flakeDir}";
@@ -28,7 +28,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git"  "sudo" "thefuck" ]; #doble esc para agregar sudo al comando y fuck para corregir comando
+      plugins = [ "git"  "thefuck" ]; #fuck para corregir comando
       theme = "robbyrussell";
     };
   };
