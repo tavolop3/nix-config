@@ -28,7 +28,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git"  "thefuck" ]; #fuck para corregir comando
+      plugins = [ "git" ];
       theme = "robbyrussell";
     };
   };
