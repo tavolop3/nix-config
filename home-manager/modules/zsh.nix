@@ -17,7 +17,7 @@
 
       sconf = "nvim ${flakeDir}/nixos/configuration.nix";
       conf = "nvim ${flakeDir}/home-manager/home.nix";
-      #pkgs = "nvim ${flakeDir}/nixos/packages.nix";
+      pkgs = "nvim ${flakeDir}/home-manager/modules/packages.nix";
 
       ll = "ls -l";
       v = "nvim";
