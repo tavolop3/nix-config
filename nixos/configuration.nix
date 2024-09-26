@@ -8,7 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #./packages.nix
       ./user.nix
+      ./nixvim/nixvim.nix
     ];
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
@@ -17,7 +19,7 @@
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  #boot.loader.grub.useOSProber = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -98,8 +100,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     jetbrains.idea-ultimate
-     neovim
+     ulauncher
      git
      vscode
      google-chrome
