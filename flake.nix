@@ -30,8 +30,8 @@
     homeConfigurations.tao = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [ 
-	./home-manager/home.nix 
-	inputs.nixvim.homeManagerModules.nixvim
+        ./home-manager/home.nix 
+        inputs.nixvim.homeManagerModules.nixvim
       ];
     };
   };
