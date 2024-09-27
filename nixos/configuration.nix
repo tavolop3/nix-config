@@ -6,10 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [
       ./user.nix
-      # ./nixvim/nixvim.nix
     ];
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
@@ -20,7 +18,6 @@
   boot.loader.grub.device = "/dev/sda";
   #boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -115,10 +112,10 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 50000 ];
+  # networking.firewall.allowedTCPPorts = [ 50000 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

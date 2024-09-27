@@ -15,24 +15,35 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
-  let
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  nixosConfigurations = let
     system = "x86_64-linux";
-  in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [ 
-        ./nixos/configuration.nix 
-        # inputs.nixvim.nixosModules.nixvim
-      ];
-    };
+    commonConfig = ./nixos/configuration.nix;
+    in {
 
-    homeConfigurations.tao = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ 
-        ./home-manager/home.nix 
-        inputs.nixvim.homeManagerModules.nixvim
-      ];
+      desktop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ 
+          commonConfig
+          ./nixos/hosts/desktop/configuration.nix
+        ];
+      };
+
+      laptop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ 
+          commonConfig
+          ./nixos/hosts/laptop/configuration.nix
+        ];
+      };
+
+      homeConfigurations.tao = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ 
+          ./home-manager/home.nix 
+          inputs.nixvim.homeManagerModules.nixvim
+        ];
+      };
     };
   };
 }
