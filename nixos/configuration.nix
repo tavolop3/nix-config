@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./user.nix
-      ./nixvim/nixvim.nix
+      # ./nixvim/nixvim.nix
     ];
 
   # Enable the Flakes feature and the accompanying new nix command-line tool

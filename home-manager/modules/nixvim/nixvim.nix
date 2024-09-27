@@ -1,9 +1,8 @@
 {
-
   imports = [
     ./opts.nix
-    ./plugins/plugins-bundle.nix
     ./keymaps.nix
+    ./plugins/plugins-bundle.nix
   ];
 
   programs.nixvim = {

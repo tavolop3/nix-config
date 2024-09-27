@@ -16,20 +16,23 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
-	let
-		system = "x86_64-linux";
-	in {
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-			inherit system;
-			modules = [ 
-				./nixos/configuration.nix 
-				inputs.nixvim.nixosModules.nixvim
-			];
-		};
-		
-		homeConfigurations.tao = home-manager.lib.homeManagerConfiguration {
-			pkgs = nixpkgs.legacyPackages.${system};
-			modules = [ ./home-manager/home.nix ];
-		};
-	};
+  let
+    system = "x86_64-linux";
+  in {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      inherit system;
+      modules = [ 
+        ./nixos/configuration.nix 
+        # inputs.nixvim.nixosModules.nixvim
+      ];
+    };
+
+    homeConfigurations.tao = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      modules = [ 
+	./home-manager/home.nix 
+	inputs.nixvim.homeManagerModules.nixvim
+      ];
+    };
+  };
 }
