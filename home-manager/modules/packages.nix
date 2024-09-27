@@ -6,7 +6,7 @@
     firefox
     alacritty
     keepassxc
-    discord
+    vesktop #share screen
 
     #coding stuff
     vscode
