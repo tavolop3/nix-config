@@ -6,7 +6,7 @@
     firefox
     alacritty
     keepassxc
-    ulauncher
+    discord
 
     #coding stuff
     vscode
