@@ -10,7 +10,6 @@
 
     #coding stuff
     vscode
-    git
     gcc
     eclipses.eclipse-sdk
 
