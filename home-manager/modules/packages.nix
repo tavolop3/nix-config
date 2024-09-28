@@ -8,6 +8,7 @@
     keepassxc
     vesktop #discord share screen
     okular
+    spacedrive
 
     #coding stuff
     vscode
