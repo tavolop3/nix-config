@@ -13,6 +13,7 @@
     vscode
     gcc
     eclipses.eclipse-sdk
+    # vagrant
 
     #cli utils
     neofetch
