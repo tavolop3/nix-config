@@ -6,6 +6,7 @@
     
     sessionVariables = {
       TERMINAL = "alacritty";
+      EDITOR = "nvim";
     };
   };
 
