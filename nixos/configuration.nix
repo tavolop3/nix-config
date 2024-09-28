@@ -93,6 +93,7 @@
     home-manager
     gnomeExtensions.appindicator
     gnomeExtensions.clipboard-indicator
+    gnomeExtensions.no-overview
   ];
 
   fonts.packages = with pkgs; [
