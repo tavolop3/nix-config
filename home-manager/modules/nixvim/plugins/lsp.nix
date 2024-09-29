@@ -22,8 +22,13 @@
     lsp = {
       enable = true;
       servers = {
-        nil-ls.enable = true;
-        clangd.enable = true;
+        nil-ls.enable = true; #nix
+        clangd.enable = true; #c, c++
+        pyright.enable = true; #python
+        bashls.enable = true; # Bash
+        vuels.enable = true; # Vue
+        html.enable = true; # HTML
+        cssls.enable = true; # CSS
       };
     };
 

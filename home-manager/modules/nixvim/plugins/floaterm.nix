@@ -7,6 +7,6 @@
 
     title = "";
 
-    keymaps.toggle = "<C-b>";
+    keymaps.toggle = "<M-i>";
   };
 }

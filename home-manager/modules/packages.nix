@@ -13,6 +13,7 @@
     vscode
     gcc
     eclipses.eclipse-sdk
+    ripgrep
     # vagrant
 
     #cli utils

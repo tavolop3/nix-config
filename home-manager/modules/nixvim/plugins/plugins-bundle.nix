@@ -10,5 +10,27 @@
     ./nix.nix
     ./lsp.nix
     ./cmp.nix
+    ./lazy.nix
+    ./oil.nix
   ];
+
+  programs.nixvim.plugins = {
+    undotree = {
+      enable = true;
+      settings = {
+        autoOpenDiff = true;
+        focusOnToggle = true;
+      };
+    };
+
+    # Dashboard
+    alpha = {
+      enable = true;
+      theme = "dashboard";
+    };
+
+    lazygit.enable = true;
+
+    persistence.enable = true;
+  };
 }

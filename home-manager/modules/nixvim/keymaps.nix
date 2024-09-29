@@ -26,8 +26,8 @@
           "<C-c>" = ":b#<CR>";
 
           # close by Ctrl+x
-          # "<C-x>" = ":close<CR>";
-          "<leader>x" = ":close<CR>";
+          "<C-x>" = ":close<CR>";
+          "<leader>x" = ":BufferClose<CR>";
 
           # save by \+s or Ctrl+s
           "<C-s>" = ":w<CR>";
@@ -48,6 +48,10 @@
           # M = Alt key
           "<M-k>" = ":move-2<CR>";
           "<M-j>" = ":move+<CR>";
+
+          "<leader>ut" = ":UndotreeToggle<CR>";
+
+          "<leader>gg" = ":LazyGit<CR>";
         };
       visual =
         lib.mapAttrsToList

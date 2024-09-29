@@ -5,11 +5,11 @@
     keymaps = {
       "<leader>ff" = "find_files";
       "<leader>b" = "buffers";
-      "<leader>fh" = "help_tags";
-      "<leader>gf" = "git_files";
-      "<leader>of" = "oldfiles";
-      "<leader>fg" = "live_grep";
-      "<leader>fd" = "diagnostics";
+      "<leader>fo" = "oldfiles";
+      "<leader>fw" = "live_grep";
+      "<leader>fg" = "git_commits";
+      # "<leader>fh" = "help_tags";
+      # "<leader>fd" = "diagnostics";
     };
 
     settings.defaults = {
