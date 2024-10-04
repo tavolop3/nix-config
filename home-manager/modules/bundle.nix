@@ -5,5 +5,6 @@
     ./git.nix
     ./alacritty.nix
     ./nixvim/nixvim.nix
+    ./tmux.nix
   ];
 }

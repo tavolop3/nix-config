@@ -8,16 +8,19 @@
     keepassxc
     vesktop #discord share screen
     okular
+    speedcrunch
 
     #coding stuff
     vscode
-    gcc
     eclipses.eclipse-sdk
     ripgrep
+    direnv
+    gcc
     # vagrant
 
     #cli utils
     neofetch
     btop
+    tldr
   ];
 }
