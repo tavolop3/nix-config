@@ -11,7 +11,7 @@
   boot.initrd.availableKernelModules = [ "ahci" "ohci_pci" "ehci_pci" "xhci_pci" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" "amdgpu" ];
-  boot.extraModulePackages = [ ];
+  # boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f567d136-d56b-46e3-b9c9-d84d2c65d63c";
@@ -46,6 +46,10 @@
   } ];
   networking.defaultGateway = "192.168.0.1"; 
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [ rtl88xxau-aircrack ];
+  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
