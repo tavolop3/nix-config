@@ -29,6 +29,7 @@
         vuels.enable = true; # Vue
         html.enable = true; # HTML
         cssls.enable = true; # CSS
+        java-language-server.enable = true; # Java
       };
     };
 
