@@ -17,6 +17,7 @@
     ripgrep
     direnv
     gcc
+    jetbrains.idea-ultimate
     # vagrant
 
     #cli utils

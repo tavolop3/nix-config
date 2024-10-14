@@ -11,7 +11,7 @@
     ./lsp.nix
     ./cmp.nix
     ./lazy.nix
-    ./oil.nix
+    ./harpoon.nix
   ];
 
   programs.nixvim.plugins = {
