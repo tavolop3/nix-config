@@ -13,6 +13,7 @@
     #coding stuff
     vscode
     eclipses.eclipse-sdk
+    jdk
     ripgrep
     direnv
     gcc
@@ -22,5 +23,9 @@
     neofetch
     btop
     tldr
+
+    #cracking
+    # aircrack-ng
+    # wifite2
   ];
 }

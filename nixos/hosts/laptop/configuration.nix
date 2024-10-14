@@ -33,8 +33,16 @@
   # services.fail2ban.enable = true; #Warning: If you plan on using SSH on a public network, Fail2ban is highly recommended as a base standard of security.
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ /*2222*/ 50000 ];
+  networking.firewall.allowedTCPPorts = [ /*2222*/ ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # environment.etc."nextcloud-admin-pass".text = "";
+  # services.nextcloud = {
+  #   enable = true;
+  #   package = pkgs.nextcloud28;
+  #   hostName = "";
+  #   config.adminpassFile = "/etc/nextcloud-admin-pass";
+  # };
 }

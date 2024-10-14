@@ -11,7 +11,7 @@
   boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
+  # boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/de4f8cd6-1b99-449b-bd91-31c28d97497d";
@@ -36,4 +36,10 @@
 
   #opengl
   hardware.opengl.enable = true;
+
+  #tplink t2u
+  boot.extraModulePackages = with config.boot.kernelPackages; [ rtl88xxau-aircrack ];
+  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;
+
 }
