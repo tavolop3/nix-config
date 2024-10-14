@@ -9,9 +9,16 @@
     ];
 
   boot.initrd.availableKernelModules = [ "ahci" "ohci_pci" "ehci_pci" "xhci_pci" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" "amdgpu" ];
-  # boot.extraModulePackages = [ ];
+  boot.kernelParams = [ 
+    "amdgpu.si_support=1"
+    "amdgpu.cik_support=1"
+    "radeon.si_support=0"
+    "radeon.cik_support=0"
+  ];
+
+boot.blacklistedKernelModules = [ "radeon" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f567d136-d56b-46e3-b9c9-d84d2c65d63c";
@@ -31,8 +38,17 @@
 
   hardware.opengl = {
     enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
   };
 
+  # hardware.opengl.extraPackages = with pkgs; [
+  #   rocmPackages.clr.icd
+  # ];
+
+  hardware.opengl.extraPackages = with pkgs; [
+    mesa.opencl
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
